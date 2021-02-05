@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements OkHttpTools.Reque
         return builder.build();
     }
     @Override
-    public void onRequestSuccess(String eventMsg, String responseStr) {
+    public void onRequestSuccess(String eventMsg, String responseStr) {//response.code()==200时回调
         System.out.println("responseStr:"+responseStr);
         if("请求数据".equals(eventMsg)){
             runOnUiThread(new Runnable() {
@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity implements OkHttpTools.Reque
     }
 
     @Override
-    public void onResponseError(String responseStr) {
+    public void onResponseError(String responseStr) {//网络请求失败的回调
 
     }
 
     @Override
-    public void onError(String errorMsg) {
+    public void onError(String errorMsg) {//网络请求失败的回调
 
     }
 }  
